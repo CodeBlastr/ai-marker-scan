@@ -1,0 +1,32 @@
+{
+  "name": "ai-marker-scan",
+  "version": "0.1.0",
+  "description": "Find AI-generation markers (C2PA, IPTC, Stable Diffusion PNG chunks) in image files with a byte scan. No dependencies, no API, runs at the edge.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "keywords": ["c2pa", "content-credentials", "iptc", "ai-generated", "provenance", "image", "metadata", "stable-diffusion", "cloudflare-workers"],
+  "author": "Richard Kersey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeBlastr/ai-marker-scan.git"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
