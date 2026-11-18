@@ -2,6 +2,16 @@
 
 Find AI-generation markers in image files with a byte scan. No dependencies, no API calls, no model. One function, about 300 lines, fast enough to run on every upload in a Cloudflare Worker.
 
+## Install
+
+```
+npm install github:CodeBlastr/ai-marker-scan
+```
+
+It builds on install. Or copy `src/index.ts` into your project: it's one file with no dependencies.
+
+## Use
+
 ```ts
 import { scanImage } from "ai-marker-scan";
 
